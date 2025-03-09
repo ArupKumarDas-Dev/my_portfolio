@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arup - Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
+    <script
+      src="https://kit.fontawesome.com/30a2db85a8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- <video autoplay muted loop id="myVideo">
+      <source src="Video1.mp4" type="video/mp4" />
+    </video> -->
+
+    <div class="video-container">
+      <video id="backgroundVideo" autoplay muted>
+        <source src="Video2.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="Images/logo3_Transparent.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">My Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>C++ Developer & 3D animator</p>
+          <h1>Hi, I'm <span>Arup</span> <br />From Kolkata</h1>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------about-------------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col1">
+            <img src="Images/profile-pic.png" width="350" />
+          </div>
+          <div class="about-col2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              3rd year B.Tech Computer Science student at Gargi Memorial
+              Institute of Technology with good academic record and keen
+              interest and practical exposure in the field of information
+              technology, especially web applications and software development.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Blender</span><br />Making 3D artwork and animation for
+                  various projects
+                </li>
+                <li>
+                  <span>Software Development</span><br />Upgrading and
+                  developing softwares using C++ and other languages.
+                </li>
+                <li><span>Web Development</span><br />Web app Development</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2024 - Current</span><br />42 hours C++ beginner to
+                  beyond course from Udemy <br />Completed 1.5 months internship
+                  at Cincooni on growth executive position
+                </li>
+                <li>
+                  <span>2023 - 2024</span><br />2 months Web development traning
+                  from Euphoria
+                </li>
+                <li>
+                  <span>2022-2023</span><br />learned python and c for DSA
+                </li>
+                <li>
+                  <span>Programing langugaes known</span><br />C, C++, Html,
+                  Css, JavaScript & Basics of Php.
+                </li>
+                <li>
+                  <span>Others</span><br />Currently using Blender and doing
+                  freelancing on CGTrader on various 3d Models and Environment
+                </li>
+                <li><span>Other Software</span><br />Adobe, Microsoft 365</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2020</span><br />Passed out Secondary exam from CBSE
+                  board
+                </li>
+                <li>
+                  <span>2022</span><br />Passed out Higher Secondary exam from
+                  WBCHSE board
+                </li>
+                <li>
+                  <span>2022 - 2026</span><br />Currently persuing graduation
+                  from Gargi Memorial Institute of Technology on Computer
+                  Science & Engineering department
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------services---------------------- -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-cubes"></i>
+            <h2>3D Model/Animation</h2>
+            <p>Personalized 3D model animation of your product.</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-file-code"></i>
+            <h2>Web Design</h2>
+            <p>Web development and design for you business.</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Software Design</h2>
+            <p>Software design and development for your company.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------------portfolio--------------------- -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="Images/Work1.png" alt="image1" />
+            <div class="layer">
+              <h3>Sci-fi Photorealistic 3D game Environment</h3>
+              <p>
+                This 3D environment is made through blender's Modelling and
+                Texturing division.
+              </p>
+              <a
+                href="https://www.linkedin.com/posts/arup-kumar-das-85952a273_connections-blender-workflow-activity-7251685329546428417-GX4H?utm_source=share&utm_medium=member_desktop"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="Images/Work2.png" alt="image1" />
+            <div class="layer">
+              <h3>Ancient Photorealistic 3D game Environment</h3>
+              <p>
+                This 3D environment is made through blender's Modelling and
+                Texturing & Photorealistic lighting division.
+              </p>
+              <a
+                href="https://www.linkedin.com/posts/arup-kumar-das-85952a273_connections-blender-workflow-activity-7251685329546428417-GX4H?utm_source=share&utm_medium=member_desktop"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="Images/Work3.png" alt="image1" />
+            <div class="layer">
+              <h3>3D Game ready Environment design</h3>
+              <p>
+                This 3d environmentis game ready and can be used on unreal
+                engine 5 for game development.
+              </p>
+              <a
+                href="https://www.linkedin.com/posts/arup-kumar-das-85952a273_connections-blender-workflow-activity-7251685329546428417-GX4H?utm_source=share&utm_medium=member_desktop"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+    <!-- ---------------------------portfolio--------------------- -->
+    <!-- --------------------------contact----------------------------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <div class="sub-title1">
+              <h1>Contact Me</h1>
+              <p>
+                <i class="fa-regular fa-paper-plane"></i> arup80424@gmail.com
+              </p>
+              <p><i class="fa-solid fa-phone"></i> +91 7908218871</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/_azazel_6.6.6/"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+              <a href="Images/My cv.pdf" download class="btn btn2"
+                >Download CV</a
+              >
+            </div>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------contact----------------------------- -->
+    <!-- --------------------------Circular Work Gallery--------------------------- -->
+    <div class="gallery">
+      <center>
+        <h2 class="Title">Work Gallery</h2>
+      </center>
+      <div class="banner">
+        <div class="slider" style="--quantity: 9">
+          <div class="item" style="--position: 1">
+            <img src="images/1.png" alt="" />
+          </div>
+          <div class="item" style="--position: 2">
+            <img src="images/2.png" alt="" />
+          </div>
+          <div class="item" style="--position: 3">
+            <!-- <video src="Images/3.mp4" autoplay muted loop preload></video> -->
+            <img src="images/3.png" alt="" />
+          </div>
+          <div class="item" style="--position: 4">
+            <img src="images/4.png" alt="" />
+          </div>
+          <div class="item" style="--position: 5">
+            <img src="images/5.png" alt="" />
+          </div>
+          <div class="item" style="--position: 6">
+            <img src="images/6.png" alt="" />
+          </div>
+          <div class="item" style="--position: 7">
+            <img src="images/7.png" alt="" />
+          </div>
+          <div class="item" style="--position: 8">
+            <img src="images/8.png" alt="" />
+          </div>
+          <div class="item" style="--position: 9">
+            <img src="images/9.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------Circular Work Gallery--------------------------- -->
+    <div class="copyright">
+      <p><b> © 2024 Arup, Inc. All rights reserved.</b></p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwk7RtwE7c1qcXMF5EwQdgZkHIwNaox-UdZLy2gvsin8JX6julPptHBrNzwDWe5bsWETg/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) }).then(
+          (response) => console.log("Success!", response)
+        );
+        msg.innerHTML = "Message has been sent succesfully";
+        setTimeout(function () {
+          msg.innerHTML = "";
+        }, 5000);
+        form
+          .reset()
+
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
