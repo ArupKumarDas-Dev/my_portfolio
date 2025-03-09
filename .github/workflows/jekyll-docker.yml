@@ -1,0 +1,41 @@
+title: Arup Kumar Das Portfolio
+description: A portfolio showcasing the work and skills , a C++ developer and 3D animator from Kolkata.
+url: ""  # Replace with your actual website URL
+baseurl: ""  # Leave empty if not using a subpath
+
+# Author information
+author:
+  name: Arup Kumar Das
+  email: arup80424@gmail.com
+
+# Social media links
+social:
+  facebook: "https://www.facebook.com/profile.php?id=61553770695091"  # Update with your actual Facebook URL
+  instagram: "https://www.instagram.com/_azazel_6.6.6/"
+  linkedin: "https://www.linkedin.com/in/arup-kumar-das-85952a273/"  # Update with your actual LinkedIn URL
+
+# Theme settings
+theme: minima  # You can choose any theme you like
+
+# Build settings
+markdown: kramdown  # Markdown processor
+plugins:
+  - jekyll-feed  # Allows RSS feed generation
+  - jekyll-seo-tag  # SEO tags for better search engine visibility
+
+# Navigation links
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Services
+    url: /services/
+  - title: Portfolio
+    url: /portfolio/
+  - title: Contact
+    url: /contact/
+
+# Pagination settings (optional)
+paginate: 5  # Number of posts per page
+paginate_path: "/page:num/"
