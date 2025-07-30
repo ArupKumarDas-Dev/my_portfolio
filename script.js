@@ -43,3 +43,16 @@ window.addEventListener("load", function () {
   }, 500);
 });
 
+// window.addEventListener('DOMContentLoaded', () => {
+//   const video = document.getElementById('backgroundVideo');
+
+//   const isMobile = window.innerWidth <= 768;
+
+//   const source = isMobile
+//   ? 'video1.mkv'
+//   : 'video2com.mp4';
+
+//   video.src = source;
+//   video.load();
+//   video.play();
+// });
