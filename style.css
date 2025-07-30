@@ -32,6 +32,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border: 5px solid blue;
 }
 
 video {
@@ -44,20 +45,26 @@ video {
     height: auto;
     z-index: -1;
     transform: translate(-50%, -50%);
+    border: 5px solid red;
 }
 
-@media (min-aspect-ratio:16/9) {
-    #myVideo {
-        width: 100%;
-        height: auto;
-    }
+@media (max-width: 768px) {
+  #backgroundVideo{
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .video-container {
+    height: 100vh;
+  }
 }
 
-@media (max-aspect-ratio:16/9) {
-    #myVideo {
-        width: auto;
-        height: 100%;
-    }
+@media (max-width: 480px) {
+  #backgroundVideo {
+    min-width: 100%;
+    min-height: 100%;
+  }
 }
 
 .container {
@@ -434,16 +441,16 @@ form .btn2 {
     width: 100%;
     height: 100vh;
     text-align: center;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     /* border: 3px solid blue; */
 }
 
 .banner .slider {
     position: absolute;
-    width: 360px;
-    height: 220px;
-    top: 50%;
+    width: 30%;
+    height: 30%;
+    top: 60%;
     left: 35%;
     transform-style: preserve-3d;
     transform: perspective(1000px);
@@ -458,7 +465,7 @@ form .btn2 {
     }
 
     to {
-        transform: perspective(1000px) rotateX(15deg) rotatey(0deg);
+        transform: perspective(1000px) rotateX(0deg) rotatey(0deg);
     }
 }
 
@@ -467,7 +474,7 @@ form .btn2 {
     inset: 0 0 0 0;
     border: 2px solid rgb(29, 31, 29);
     border-radius: 6px;
-    /* box-shadow: #262626; */
+    box-shadow: #262626;
     transform:
         rotateY(calc((var(--position) - 1)*(360/ var(--quantity))* 1deg)) translateZ(500px);
 }
@@ -475,14 +482,32 @@ form .btn2 {
 .banner .slider .item img {
     width: 100%;
     height: 100%;
-    object-fit: scale-down;
+    object-fit: cover;
     border-radius: 6px;
     opacity: 50%;
     transition: 0.5s;
+    /* border: 5px solid blue; */
 }
 
 .banner .slider .item img:hover {
     opacity: 100%;
+}
+@media (max-width: 768px) {
+    .banner .slider {
+        width: 100%;
+        height: 100%;
+        top: 20%;
+        left: 0;
+        scale: 50%;
+        border: 5px solid red;
+    }
+
+    .banner .slider .item {
+        width: 50%;
+        height: 50%;
+        top: 25%;
+        left: 25%;
+    }
 }
 
 /* --------------------------------------Circular Work Gallery------------------------- */
@@ -566,8 +591,8 @@ nav .fas {
         font-size: 14px;
     }
     .banner {
-        width: 110%;
-        height: 60vh;
+        width: 100%;
+        height: 100vh;
         text-align: center;
         overflow: visible;
         position: relative;
@@ -579,16 +604,17 @@ nav .fas {
         width: 100%;
         height: 100%;
         top: 20%;
-        left: 0%;
-        scale: 40%;
+        left: 10%;
+        scale: 50%;
+        /* border: 2px solid rgb(255, 255, 255); */
     }
 
     .banner .slider .item {
         position: fixed;
         inset: 0 0 0 0;
-        /* border: 2px solid rgb(255, 255, 255); */
-        border-radius: 6px;
-        width: 68%;
+        
+        border-radius: 15px;
+        width: 65%;
         height: 50%;
         box-shadow: #262626;
     }
@@ -596,13 +622,13 @@ nav .fas {
     .banner .slider .item img {
         width: 100%;
         height: 100%;
-        /* object-fit: scale-down; */
+        object-fit: scale-down;
         border-radius: 6px;
     }
 
     @keyframes autoRun {
         from {
-            transform: perspective(1000px) rotateX(15deg) rotatey(360deg);
+            transform: perspective(1000px) rotateX(0deg) rotatey(360deg);
         }
     
         to {
