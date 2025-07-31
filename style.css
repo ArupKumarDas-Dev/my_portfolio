@@ -464,7 +464,7 @@ form .btn2 {
     }
 
     to {
-        transform: perspective(1000px) rotateX(0deg) rotatey(0deg);
+        transform: perspective(1000px) rotateX(15deg) rotatey(0deg);
     }
 }
 
