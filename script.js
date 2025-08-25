@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
       loopStart = 6;
       loopEnd = 13;
     } else {
-      source = "video2_fixed.mp4";
+      source = "video2.mp4";
       loopStart = 8.7;
       loopEnd = 16.7;
     }
