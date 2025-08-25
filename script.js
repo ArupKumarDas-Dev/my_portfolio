@@ -31,42 +31,35 @@ window.addEventListener("load", function () {
 
 window.addEventListener("DOMContentLoaded", () => {
   const video = document.getElementById("backgroundVideo");
-  const mobileQuery = window.matchMedia("(max-width: 768px)");
+  const isMobile = window.innerWidth <= 768;
 
-  function setupVideo(isMobile) {
-    let source, loopStart, loopEnd;
+  // Make sure your video files are encoded with universal codecs like H.264
+  const source = isMobile ? "video1_fixed.mp4" : "video2.mp4";
+  video.src = source;
+  video.load();
 
-    if (isMobile) {
-      source = "video1_fixed.mp4";
-      loopStart = 6;
-      loopEnd = 13;
-    } else {
-      source = "video2.mp4";
-      loopStart = 8.7;
-      loopEnd = 16.7;
-    }
+  let loopStart, loopEnd;
 
-    // Set the video source only if it's different to prevent unnecessary reloads
-    if (video.src.indexOf(source) === -1) {
-      video.src = source;
-      video.load();
-    }
-
-    // This is the correct and efficient looping method
-    video.addEventListener("timeupdate", function loopVideo() {
-      if (this.currentTime >= loopEnd) {
-        this.currentTime = loopStart;
-        this.play();
-      }
-    });
-
-    // Ensure the video plays on first load
-    video.play();
+  if (isMobile) {
+    loopStart = 6;
+    loopEnd = 13;
+  } else {
+    loopStart = 8.7;
+    loopEnd = 16.7;
   }
 
-  // Initial check on page load
-  setupVideo(mobileQuery.matches);
+  function checkLoop() {
+    if (video.currentTime >= loopEnd) {
+      video.currentTime = loopStart;
+    }
+    if (!video.paused) {
+      requestAnimationFrame(checkLoop);
+    }
+  }
 
-  // Add listener for screen size changes
-  mobileQuery.addListener(e => setupVideo(e.matches));
+  video.addEventListener("play", () => {
+    requestAnimationFrame(checkLoop);
+  });
 });
+// This video provides a guide to troubleshooting various video playback problems on Windows, including issues with video not showing on your computer. [Fix All Problems of Video Not Playing in Windows](https://www.youtube.com/watch?v=1eN18Zc8I0Y)
+// http://googleusercontent.com/youtube_content/0
