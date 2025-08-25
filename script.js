@@ -33,34 +33,33 @@ window.addEventListener("DOMContentLoaded", () => {
   const video = document.getElementById("backgroundVideo");
   const isMobile = window.innerWidth <= 768;
 
-  const source = isMobile ? "video1.mp4" : "video2com.mp4";
+  // Make sure your video files are encoded with universal codecs like H.264
+  const source = isMobile ? "video1_fixed.mp4" : "video2_fixed.mp4";
   video.src = source;
   video.load();
 
   let loopStart, loopEnd;
-  
-  // Conditional logic to set loop points based on the video source
+
   if (isMobile) {
     loopStart = 6;
-    loopEnd = 12.7;
+    loopEnd = 13;
   } else {
     loopStart = 8.7;
     loopEnd = 16.7;
   }
 
-  // Function to handle the looping logic
   function checkLoop() {
     if (video.currentTime >= loopEnd) {
       video.currentTime = loopStart;
     }
-    // Continue the loop only if the video is playing
     if (!video.paused) {
       requestAnimationFrame(checkLoop);
     }
   }
 
-  // Event listener to start the loop check when the video is playing
   video.addEventListener("play", () => {
     requestAnimationFrame(checkLoop);
   });
 });
+// This video provides a guide to troubleshooting various video playback problems on Windows, including issues with video not showing on your computer. [Fix All Problems of Video Not Playing in Windows](https://www.youtube.com/watch?v=1eN18Zc8I0Y)
+// http://googleusercontent.com/youtube_content/0
