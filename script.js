@@ -31,35 +31,42 @@ window.addEventListener("load", function () {
 
 window.addEventListener("DOMContentLoaded", () => {
   const video = document.getElementById("backgroundVideo");
-  const isMobile = window.innerWidth <= 768;
+  const mobileQuery = window.matchMedia("(max-width: 768px)");
 
-  // Make sure your video files are encoded with universal codecs like H.264
-  const source = isMobile ? "video1_fixed.mp4" : "video2_fixed.mp4";
-  video.src = source;
-  video.load();
+  function setupVideo(isMobile) {
+    let source, loopStart, loopEnd;
 
-  let loopStart, loopEnd;
+    if (isMobile) {
+      source = "video1_fixed.mp4";
+      loopStart = 6;
+      loopEnd = 13;
+    } else {
+      source = "video2_fixed.mp4";
+      loopStart = 8.7;
+      loopEnd = 16.7;
+    }
 
-  if (isMobile) {
-    loopStart = 6;
-    loopEnd = 13;
-  } else {
-    loopStart = 8.7;
-    loopEnd = 16.7;
+    // Set the video source only if it's different to prevent unnecessary reloads
+    if (video.src.indexOf(source) === -1) {
+      video.src = source;
+      video.load();
+    }
+
+    // This is the correct and efficient looping method
+    video.addEventListener("timeupdate", function loopVideo() {
+      if (this.currentTime >= loopEnd) {
+        this.currentTime = loopStart;
+        this.play();
+      }
+    });
+
+    // Ensure the video plays on first load
+    video.play();
   }
 
-  function checkLoop() {
-    if (video.currentTime >= loopEnd) {
-      video.currentTime = loopStart;
-    }
-    if (!video.paused) {
-      requestAnimationFrame(checkLoop);
-    }
-  }
+  // Initial check on page load
+  setupVideo(mobileQuery.matches);
 
-  video.addEventListener("play", () => {
-    requestAnimationFrame(checkLoop);
-  });
+  // Add listener for screen size changes
+  mobileQuery.addListener(e => setupVideo(e.matches));
 });
-// This video provides a guide to troubleshooting various video playback problems on Windows, including issues with video not showing on your computer. [Fix All Problems of Video Not Playing in Windows](https://www.youtube.com/watch?v=1eN18Zc8I0Y)
-// http://googleusercontent.com/youtube_content/0
