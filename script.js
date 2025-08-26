@@ -29,9 +29,8 @@ window.addEventListener("load", function () {
   }, 500);
 });
 const video = document.getElementById("backgroundVideo");
-// Define the start and end points for the loop (in seconds)
-const loopStart = 8.7; // Start looping at 5 seconds
-const loopEnd = 16.7; // End looping at 10 seconds
+const loopStart = 8.7; // Start looping at 8.7 seconds
+const loopEnd = 16.7; // End looping at 16.7 seconds
 
 // Event listener for time updates
 video.addEventListener("timeupdate", () => {
