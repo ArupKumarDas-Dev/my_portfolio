@@ -28,38 +28,16 @@ window.addEventListener("load", function () {
     preloader.style.display = "none";
   }, 500);
 });
+const video = document.getElementById("backgroundVideo");
+// Define the start and end points for the loop (in seconds)
+const loopStart = 8.7; // Start looping at 5 seconds
+const loopEnd = 16.7; // End looping at 10 seconds
 
-window.addEventListener("DOMContentLoaded", () => {
-  const video = document.getElementById("backgroundVideo");
-  const isMobile = window.innerWidth <= 768;
-
-  // Make sure your video files are encoded with universal codecs like H.264
-  const source = isMobile ? "video1_fixed.mp4" : "video2.mp4";
-  video.src = source;
-  video.load();
-
-  let loopStart, loopEnd;
-
-  if (isMobile) {
-    loopStart = 6;
-    loopEnd = 13;
-  } else {
-    loopStart = 8.7;
-    loopEnd = 16.7;
+// Event listener for time updates
+video.addEventListener("timeupdate", () => {
+  // Check if current time exceeds loop end time
+  if (video.currentTime >= loopEnd) {
+    video.currentTime = loopStart; // Reset to loop start
+    video.play(); // Continue playing
   }
-
-  function checkLoop() {
-    if (video.currentTime >= loopEnd) {
-      video.currentTime = loopStart;
-    }
-    if (!video.paused) {
-      requestAnimationFrame(checkLoop);
-    }
-  }
-
-  video.addEventListener("play", () => {
-    requestAnimationFrame(checkLoop);
-  });
 });
-// This video provides a guide to troubleshooting various video playback problems on Windows, including issues with video not showing on your computer. [Fix All Problems of Video Not Playing in Windows](https://www.youtube.com/watch?v=1eN18Zc8I0Y)
-// http://googleusercontent.com/youtube_content/0
